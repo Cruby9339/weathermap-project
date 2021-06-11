@@ -9,9 +9,25 @@ let fetchForecast = function (coords) {
 		},
 		success: function (data){
 			console.log(data)
+
+			createTemp(filterTemp(data))
 		}
 	});
 }
 
+function filterTemp(data){
+	let weatherObjectArr = [
+		{
+			date: data.list[0].dt_txt,
+			temp: data.list[0].main.temp
 
-let temp = data[0]
+		},
+
+	]
+	return weatherObjectArr
+}
+
+
+
+
+
