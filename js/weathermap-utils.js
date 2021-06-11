@@ -1,14 +1,15 @@
-$.ajax({
-	url: "http://api.openweathermap.org/data/2.5/forecast",
-	type: "GET",
-	data: {
-		APPID: open_weathermap_token,
-		lat: 29.424,
-		lon: -98.493,
-		units: "imperial"
-	},
-	success: function (data){
-		console.log(data)
-	}
-})
+let weather = function (coords) {
+	$.get({
+		url: "https://api.openweathermap.org/data/2.5/forecast/",
+		data: {
+			APPID: open_weathermap_token,
+			lat: coords.lat,
+			lon: coords.lng
+		},
+		success: function (data){
+			console.log(data)
+		}
+	});
+}
+
 
