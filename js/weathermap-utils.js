@@ -2,7 +2,7 @@ let fetchForecast = function (coords) {
 	$.get({
 		url: "https://api.openweathermap.org/data/2.5/forecast/",
 		data: {
-			APPID: open_weathermap_token,
+			APPID: OPEN_WEATHERMAP_TOKEN,
 			lat: coords.lat,
 			lon: coords.lng,
 			units: "imperial"
