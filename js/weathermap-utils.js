@@ -23,6 +23,7 @@ function filterWeatherObject(data){
 			temp: data.list[0].main.temp,
 			humidity: data.list[0].main.humidity,
 			wind: data.list[0].wind.speed,
+			icon: data.list[0].weather[0].icon
 		},
 
 	]
