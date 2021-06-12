@@ -7,26 +7,31 @@ let fetchForecast = function (coords) {
 			lon: coords.lng,
 			units: "imperial"
 		},
-		success: function (data){
+		success: function (data) {
 			console.log(data)
 
-			appendWeatherData(filterWeatherObject(data))
+			appendAllWeatherData(filterWeatherObject(data))
 		}
 	});
 }
 
-function filterWeatherObject(data){
-	let weatherObjectArr = [
-		{
-			date: data.list[0].dt_txt,
-			desc: data.list[0].weather[0].description,
-			temp: data.list[0].main.temp,
-			humidity: data.list[0].main.humidity,
-			wind: data.list[0].wind.speed,
-			icon: data.list[0].weather[0].icon
-		},
 
-	]
+function filterWeatherObject(data) {
+	let weatherObjectArr = [];
+	for (let i = 0; i < data.list.length; i++) {
+		if (i % 8 === 0) {
+			weatherObjectArr.push({
+				date: data.list[i].dt_txt,
+				desc: data.list[i].weather[0].description,
+				temp: data.list[i].main.temp,
+				humidity: data.list[i].main.humidity,
+				wind: data.list[i].wind.speed,
+				icon: data.list[i].weather[0].icon
+			})
+		}
+	}
+
+
 	return weatherObjectArr
 }
 
