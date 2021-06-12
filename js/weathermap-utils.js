@@ -10,17 +10,19 @@ let fetchForecast = function (coords) {
 		success: function (data){
 			console.log(data)
 
-			createTemp(filterTemp(data))
+			appendWeatherData(filterWeatherObject(data))
 		}
 	});
 }
 
-function filterTemp(data){
+function filterWeatherObject(data){
 	let weatherObjectArr = [
 		{
 			date: data.list[0].dt_txt,
-			temp: data.list[0].main.temp
-
+			desc: data.list[0].weather[0].description,
+			temp: data.list[0].main.temp,
+			humidity: data.list[0].main.humidity,
+			wind: data.list[0].wind.speed,
 		},
 
 	]
