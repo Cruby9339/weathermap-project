@@ -10,10 +10,20 @@ let fetchForecast = function (coords) {
 		success: function (data) {
 			console.log(data)
 
+			appendLocationName(getLocationName(data))
 			appendAllWeatherData(filterWeatherObject(data))
 		}
 	});
 }
+
+function getLocationName(data){
+	let locationName = [];
+	locationName.push(data.city.name)
+
+	return locationName;
+}
+
+
 
 
 function filterWeatherObject(data) {

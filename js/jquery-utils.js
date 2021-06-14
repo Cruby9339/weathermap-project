@@ -5,7 +5,6 @@ function appendAllWeatherData(weatherArr) {
 	})
 }
 
-
 function getWeatherCard(weatherObj) {
 	let weatherCard = $(`<div class="card col-2 px-3"></div>`);
 
@@ -27,5 +26,7 @@ function getWeatherCard(weatherObj) {
 	return weatherCard
 }
 
-
+function appendLocationName(location){
+	$('#location').html("Current location: " + location)
+}
 

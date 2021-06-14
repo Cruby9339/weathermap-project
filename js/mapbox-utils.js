@@ -14,7 +14,6 @@ addGeocoderToMap(geocoder)
 addGeocoderEvent(geocoder)
 getMarkerCoords()
 
-
 //creates geocoder
 function setGeoCoder() {
 	return new MapboxGeocoder({
@@ -23,7 +22,6 @@ function setGeoCoder() {
 		marker: false
 	})
 }
-
 
 //changes pin to wherever geocoder searches
 function addGeocoderEvent(geocoder) {
