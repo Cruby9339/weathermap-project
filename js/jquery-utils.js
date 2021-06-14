@@ -6,7 +6,7 @@ function appendAllWeatherData(weatherArr) {
 }
 
 function getWeatherCard(weatherObj) {
-	let weatherCard = $(`<div class="card col-2 px-3"></div>`);
+	let weatherCard = $(`<div class="card col-2 px-3 mb-2 mt-2"></div>`);
 
 	weatherCard.append(
 		`<div class="card-header date">${weatherObj.date}</div>
