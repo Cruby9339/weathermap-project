@@ -23,9 +23,6 @@ function getLocationName(data){
 	return locationName;
 }
 
-
-
-
 function filterWeatherObject(data) {
 	let weatherObjectArr = [];
 	for (let i = 0; i < data.list.length; i++) {
@@ -40,7 +37,6 @@ function filterWeatherObject(data) {
 			})
 		}
 	}
-
 
 	return weatherObjectArr
 }
